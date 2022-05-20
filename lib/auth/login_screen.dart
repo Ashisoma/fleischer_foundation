@@ -1,18 +1,113 @@
+import 'package:fleischer_foundation/auth/register_screen.dart';
+import 'package:fleischer_foundation/ui/splash_screen.dart';
 import 'package:flutter/material.dart';
 
 class LoginScreen extends StatefulWidget {
-  const LoginScreen({ Key? key }) : super(key: key);
+  const LoginScreen({Key? key}) : super(key: key);
 
   @override
   State<LoginScreen> createState() => _LoginScreenState();
 }
 
 class _LoginScreenState extends State<LoginScreen> {
+  final _formKey2 = GlobalKey<FormState>();
+  final TextEditingController firstNameEditingController =
+      new TextEditingController();
+  final TextEditingController seconfNameEditingController =
+      new TextEditingController();
+  final TextEditingController emailEditingController =
+      new TextEditingController();
+  final TextEditingController passwordNameEditingController =
+      new TextEditingController();
+  final TextEditingController confirmPasswordNameEditingController =
+      new TextEditingController();
+
   @override
   Widget build(BuildContext context) {
-    
+    final loginBtn = Material(
+      elevation: 5,
+      color: Colors.white,
+      shape: StadiumBorder(
+        side: BorderSide(color: Colors.white, width: 2),
+      ),
+      // borderRadius: BorderRadius.circular(30),
+      child: MaterialButton(
+        onPressed: () {
+          Navigator.push(
+              context, MaterialPageRoute(builder: (context) => LoginScreen()));
+        },
+        padding: EdgeInsets.fromLTRB(20, 15, 20, 15),
+        minWidth: MediaQuery.of(context).size.width,
+        child: const Text("Login",
+            textAlign: TextAlign.center,
+            style: TextStyle(
+              fontSize: 20,
+              color: Colors.black,
+            )),
+      ),
+    );
+
+    final loginButton = Material(
+      elevation: 5,
+      color: Colors.white,
+      // shape: const StadiumBorder(
+      // side: BorderSide(color: Colors.black, width: 2),
+      // ),
+      borderRadius: BorderRadius.circular(30),
+      child: MaterialButton(
+        onPressed: () {
+          Navigator.push(
+              context, MaterialPageRoute(builder: (context) => SplashScreen()));
+        },
+        padding: EdgeInsets.fromLTRB(20, 15, 20, 15),
+        minWidth: MediaQuery.of(context).size.width,
+        child: const Text("Log in",
+            textAlign: TextAlign.center,
+            style: TextStyle(
+              fontSize: 20,
+              color: Colors.black,
+            )),
+      ),
+    );
+
+    final emailField = TextFormField(
+      autofocus: false,
+      controller: emailEditingController,
+      keyboardType: TextInputType.emailAddress,
+      onSaved: (value) {
+        emailEditingController.text = value!;
+      },
+      textInputAction: TextInputAction.next,
+      decoration: InputDecoration(
+        prefixIcon: const Icon(Icons.mail),
+        contentPadding: const EdgeInsets.fromLTRB(20, 15, 20, 15),
+        hintText: "Email",
+        border: OutlineInputBorder(
+          borderRadius: BorderRadius.circular(10),
+        ),
+      ),
+    );
+    final passwordNameField = TextFormField(
+      autofocus: false,
+      obscureText: true,
+      controller: passwordNameEditingController,
+      // keyboardType: TextInputType.,
+      onSaved: (value) {
+        passwordNameEditingController.text = value!;
+      },
+      textInputAction: TextInputAction.next,
+      decoration: InputDecoration(
+        prefixIcon: const Icon(Icons.key),
+        contentPadding: const EdgeInsets.fromLTRB(20, 15, 20, 15),
+        hintText: "Password",
+        border: OutlineInputBorder(
+          borderRadius: BorderRadius.circular(10),
+        ),
+      ),
+    );
+
     return Scaffold(
-       appBar: AppBar(
+      appBar: AppBar(
         backgroundColor: Colors.transparent,
         elevation: 0,
         leading: IconButton(
@@ -26,6 +121,70 @@ class _LoginScreenState extends State<LoginScreen> {
         ),
       ),
       backgroundColor: Colors.white,
+      body: Center(
+        child: Padding(
+          padding: const EdgeInsets.all(20.0),
+          child: Form(
+            key: _formKey2,
+            child: Column(
+              children: <Widget>[
+                SizedBox(
+                  height: 100,
+                  child: Image.asset(
+                    "assets/logo.png",
+                    fit: BoxFit.contain,
+                  ),
+                ),
+                SizedBox(
+                  height: 50,
+                ),
+                const Text(
+                  "Welcome back!",
+                  style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
+                ),
+                SizedBox(height: 10),
+                const Text(
+                  "Log in to your account",
+                  style: TextStyle(
+                    fontSize: 20,
+                  ),
+                ),
+                SizedBox(height: 10),
+                emailField,
+                SizedBox(height: 10),
+                passwordNameField,
+                SizedBox(
+                  height: 15,
+                ),
+                loginButton,
+                const SizedBox(height: 10),
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: [
+                    const Text("Don't you have an account? "),
+                    GestureDetector(
+                      onTap: () {
+                        Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                                builder: (context) => const RegisterScreen()));
+                      },
+                      child: const Text(
+                        "Sign up here",
+                        style: TextStyle(
+                          // color: Colors.redAccent,
+                          fontWeight: FontWeight.bold,
+                          fontSize: 15,
+                        ),
+                      ),
+                    )
+                  ],
+                ),
+              ],
+            ),
+          ),
+        ),
+      ),
     );
   }
 }

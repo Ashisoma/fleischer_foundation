@@ -25,6 +25,8 @@ class _RegisterScreenState extends State<RegisterScreen> {
         ),
       ),
       backgroundColor: Colors.white,
+
+      
     );
   }
 }
