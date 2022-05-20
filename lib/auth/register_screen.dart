@@ -1,3 +1,4 @@
+import 'package:fleischer_foundation/auth/login_screen.dart';
 import 'package:fleischer_foundation/ui/splash_screen.dart';
 import 'package:flutter/material.dart';
 
@@ -37,7 +38,7 @@ class _RegisterScreenState extends State<RegisterScreen> {
         },
         padding: EdgeInsets.fromLTRB(20, 15, 20, 15),
         minWidth: MediaQuery.of(context).size.width,
-        child: const Text("Log in",
+        child: const Text("Register",
             textAlign: TextAlign.center,
             style: TextStyle(
               fontSize: 20,
@@ -126,7 +127,7 @@ class _RegisterScreenState extends State<RegisterScreen> {
                 SizedBox(
                   height: 100,
                   child: Image.asset(
-                    "assets/logo.png",
+                    "assets/logo2.png",
                     fit: BoxFit.contain,
                   ),
                 ),
@@ -134,12 +135,12 @@ class _RegisterScreenState extends State<RegisterScreen> {
                   height: 50,
                 ),
                 const Text(
-                  "Welcome back!",
+                  "Welcome!",
                   style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
                 ),
                 SizedBox(height: 10),
                 const Text(
-                  "Log in to your account",
+                  "Create your account",
                   style: TextStyle(
                     fontSize: 20,
                   ),
@@ -158,16 +159,16 @@ class _RegisterScreenState extends State<RegisterScreen> {
                 Row(
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
-                    const Text("Don't you have an account? "),
+                    const Text("Do you have an account? "),
                     GestureDetector(
                       onTap: () {
                         Navigator.push(
                             context,
                             MaterialPageRoute(
-                                builder: (context) => const RegisterScreen()));
+                                builder: (context) => const LoginScreen()));
                       },
                       child: const Text(
-                        "Sign up here",
+                        "Log in here",
                         style: TextStyle(
                           // color: Colors.redAccent,
                           fontWeight: FontWeight.bold,

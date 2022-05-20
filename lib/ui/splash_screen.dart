@@ -58,7 +58,6 @@ class _SplashScreenState extends State<SplashScreen> {
       ),
     );
 
-    
     return Scaffold(
       appBar: AppBar(
         backgroundColor: Colors.transparent,
@@ -71,14 +70,14 @@ class _SplashScreenState extends State<SplashScreen> {
           child: Column(
             children: <Widget>[
               SizedBox(
-                height: 100,
+                height: 200,
                 child: Image.asset(
-                  "assets/logo.png",
+                  "assets/logo2.png",
                   fit: BoxFit.contain,
                 ),
               ),
               SizedBox(
-                height: 200,
+                height: 100,
               ),
               loginBtn,
               SizedBox(
