@@ -15,16 +15,16 @@ class _SplashScreenState extends State<SplashScreen> {
     final loginBtn = Material(
       elevation: 5,
       color: Colors.white,
-      shape: StadiumBorder(
-        side: BorderSide(color: Colors.white, width: 2),
+      shape: const StadiumBorder(
+        side: const BorderSide(color: Colors.white, width: 2),
       ),
       // borderRadius: BorderRadius.circular(30),
       child: MaterialButton(
         onPressed: () {
           Navigator.push(
-              context, MaterialPageRoute(builder: (context) => LoginScreen()));
+              context, MaterialPageRoute(builder: (context) => const LoginScreen()));
         },
-        padding: EdgeInsets.fromLTRB(20, 15, 20, 15),
+        padding: const EdgeInsets.fromLTRB(20, 15, 20, 15),
         minWidth: MediaQuery.of(context).size.width,
         child: const Text("Login",
             textAlign: TextAlign.center,
@@ -45,9 +45,9 @@ class _SplashScreenState extends State<SplashScreen> {
       child: MaterialButton(
         onPressed: () {
           Navigator.push(context,
-              MaterialPageRoute(builder: (context) => RegisterScreen()));
+              MaterialPageRoute(builder: (context) => const RegisterScreen()));
         },
-        padding: EdgeInsets.fromLTRB(20, 15, 20, 15),
+        padding: const EdgeInsets.fromLTRB(20, 15, 20, 15),
         minWidth: MediaQuery.of(context).size.width,
         child: const Text("Register",
             textAlign: TextAlign.center,
@@ -76,11 +76,11 @@ class _SplashScreenState extends State<SplashScreen> {
                   fit: BoxFit.contain,
                 ),
               ),
-              SizedBox(
+              const SizedBox(
                 height: 100,
               ),
               loginBtn,
-              SizedBox(
+              const SizedBox(
                 height: 15,
               ),
               registerBtn

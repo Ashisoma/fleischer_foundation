@@ -121,66 +121,68 @@ class _LoginScreenState extends State<LoginScreen> {
         ),
       ),
       backgroundColor: Colors.white,
-      body: Center(
-        child: Padding(
-          padding: const EdgeInsets.all(20.0),
-          child: Form(
-            key: _formKey2,
-            child: Column(
-              children: <Widget>[
-                SizedBox(
-                  height: 100,
-                  child: Image.asset(
-                    "assets/logo2.png",
-                    fit: BoxFit.contain,
+      body: SingleChildScrollView(
+        child: Center(
+          child: Padding(
+            padding: const EdgeInsets.all(20.0),
+            child: Form(
+              key: _formKey2,
+              child: Column(
+                children: <Widget>[
+                  SizedBox(
+                    height: 100,
+                    child: Image.asset(
+                      "assets/logo2.png",
+                      fit: BoxFit.contain,
+                    ),
                   ),
-                ),
-                SizedBox(
-                  height: 50,
-                ),
-                const Text(
-                  "Welcome back!",
-                  style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
-                ),
-                SizedBox(height: 10),
-                const Text(
-                  "Log in to your account",
-                  style: TextStyle(
-                    fontSize: 20,
+                  const SizedBox(
+                    height: 50,
                   ),
-                ),
-                SizedBox(height: 10),
-                emailField,
-                SizedBox(height: 10),
-                passwordNameField,
-                SizedBox(
-                  height: 15,
-                ),
-                loginButton,
-                const SizedBox(height: 10),
-                Row(
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  children: [
-                    const Text("Don't you have an account? "),
-                    GestureDetector(
-                      onTap: () {
-                        Navigator.push(
-                            context,
-                            MaterialPageRoute(
-                                builder: (context) => const RegisterScreen()));
-                      },
-                      child: const Text(
-                        "Sign up here",
-                        style: TextStyle(
-                          // color: Colors.redAccent,
-                          fontWeight: FontWeight.bold,
-                          fontSize: 15,
+                  const Text(
+                    "Welcome back!",
+                    style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
+                  ),
+                  const SizedBox(height: 10),
+                  const Text(
+                    "Log in to your account",
+                    style: TextStyle(
+                      fontSize: 20,
+                    ),
+                  ),
+                  const SizedBox(height: 10),
+                  emailField,
+                  const SizedBox(height: 10),
+                  passwordNameField,
+                  const SizedBox(
+                    height: 15,
+                  ),
+                  loginButton,
+                  const SizedBox(height: 10),
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: [
+                      const Text("Don't you have an account? "),
+                      GestureDetector(
+                        onTap: () {
+                          Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                  builder: (context) => const RegisterScreen()));
+                        },
+                        child: const Text(
+                          "Sign up here",
+                          style: TextStyle(
+                            // color: Colors.redAccent,
+                            fontWeight: FontWeight.bold,
+                            fontSize: 15,
+                          ),
                         ),
-                      ),
-                    )
-                  ],
-                ),
-              ],
+                      )
+                    ],
+                  ),
+                ],
+              ),
             ),
           ),
         ),
