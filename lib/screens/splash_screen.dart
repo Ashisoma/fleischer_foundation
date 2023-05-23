@@ -16,7 +16,7 @@ class _SplashScreenState extends State<SplashScreen> {
       elevation: 5,
       color: Colors.white,
       shape: const StadiumBorder(
-        side: const BorderSide(color: Colors.white, width: 2),
+        side: BorderSide(color: Colors.white, width: 2),
       ),
       // borderRadius: BorderRadius.circular(30),
       child: MaterialButton(

@@ -1,5 +1,5 @@
 import 'package:fleischer_foundation/auth/register_screen.dart';
-import 'package:fleischer_foundation/ui/splash_screen.dart';
+import 'package:fleischer_foundation/screens/splash_screen.dart';
 import 'package:flutter/material.dart';
 
 class LoginScreen extends StatefulWidget {
