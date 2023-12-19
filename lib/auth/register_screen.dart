@@ -1,4 +1,5 @@
 import 'package:fleischer_foundation/auth/login_screen.dart';
+import 'package:fleischer_foundation/screens/home_screen.dart';
 import 'package:fleischer_foundation/screens/splash_screen.dart';
 import 'package:flutter/material.dart';
 
@@ -15,8 +16,7 @@ class _RegisterScreenState extends State<RegisterScreen> {
       TextEditingController();
   final TextEditingController seconfNameEditingController =
       TextEditingController();
-  final TextEditingController emailEditingController =
-      TextEditingController();
+  final TextEditingController emailEditingController = TextEditingController();
   final TextEditingController passwordNameEditingController =
       TextEditingController();
   final TextEditingController confirmPasswordNameEditingController =
@@ -33,8 +33,8 @@ class _RegisterScreenState extends State<RegisterScreen> {
       borderRadius: BorderRadius.circular(30),
       child: MaterialButton(
         onPressed: () {
-          Navigator.push(
-              context, MaterialPageRoute(builder: (context) => const SplashScreen()));
+          Navigator.push(context,
+              MaterialPageRoute(builder: (context) => const HomeScreen()));
         },
         padding: const EdgeInsets.fromLTRB(20, 15, 20, 15),
         minWidth: MediaQuery.of(context).size.width,
@@ -163,6 +163,9 @@ class _RegisterScreenState extends State<RegisterScreen> {
                       const Text("Do you have an account? "),
                       GestureDetector(
                         onTap: () {
+                          // if (_formKey2.currentContext!.validator()) {
+
+                          // }
                           Navigator.push(
                               context,
                               MaterialPageRoute(

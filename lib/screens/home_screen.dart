@@ -1,3 +1,4 @@
+import 'package:fleischer_foundation/screens/people_list.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
@@ -42,7 +43,7 @@ class _HomeScreenState extends State<HomeScreen> {
                       style: TextStyle(
                         fontSize: 15,
                         fontWeight: FontWeight.bold,
-                        color: Colors.red,
+                        color: Colors.grey,
                       ),
                     ),
                     IconButton(
@@ -76,9 +77,18 @@ class _HomeScreenState extends State<HomeScreen> {
               ),
             ),
             IconButton(
-              onPressed: () {},
+              onPressed: () {
+                Navigator.push(
+                  context,
+                  CupertinoPageRoute(
+                    builder: (context) {
+                      return const CommunityScreen();
+                    },
+                  ),
+                );
+              },
               icon: const Icon(
-                CupertinoIcons.search,
+                CupertinoIcons.person_3,
               ),
             ),
             IconButton(
