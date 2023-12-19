@@ -12,15 +12,15 @@ class RegisterScreen extends StatefulWidget {
 class _RegisterScreenState extends State<RegisterScreen> {
   final _formKey2 = GlobalKey<FormState>();
   final TextEditingController firstNameEditingController =
-      new TextEditingController();
+      TextEditingController();
   final TextEditingController seconfNameEditingController =
-      new TextEditingController();
+      TextEditingController();
   final TextEditingController emailEditingController =
-      new TextEditingController();
+      TextEditingController();
   final TextEditingController passwordNameEditingController =
-      new TextEditingController();
+      TextEditingController();
   final TextEditingController confirmPasswordNameEditingController =
-      new TextEditingController();
+      TextEditingController();
 
   @override
   Widget build(BuildContext context) {
@@ -34,9 +34,9 @@ class _RegisterScreenState extends State<RegisterScreen> {
       child: MaterialButton(
         onPressed: () {
           Navigator.push(
-              context, MaterialPageRoute(builder: (context) => SplashScreen()));
+              context, MaterialPageRoute(builder: (context) => const SplashScreen()));
         },
-        padding: EdgeInsets.fromLTRB(20, 15, 20, 15),
+        padding: const EdgeInsets.fromLTRB(20, 15, 20, 15),
         minWidth: MediaQuery.of(context).size.width,
         child: const Text("Register",
             textAlign: TextAlign.center,
@@ -132,27 +132,27 @@ class _RegisterScreenState extends State<RegisterScreen> {
                       fit: BoxFit.contain,
                     ),
                   ),
-                  SizedBox(
+                  const SizedBox(
                     height: 50,
                   ),
                   const Text(
                     "Welcome!",
                     style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
                   ),
-                  SizedBox(height: 10),
+                  const SizedBox(height: 10),
                   const Text(
                     "Create your account",
                     style: TextStyle(
                       fontSize: 20,
                     ),
                   ),
-                  SizedBox(height: 10),
+                  const SizedBox(height: 10),
                   emailField,
-                  SizedBox(height: 10),
+                  const SizedBox(height: 10),
                   passwordNameField,
-                  SizedBox(height: 10),
+                  const SizedBox(height: 10),
                   confpasswordNameField,
-                  SizedBox(
+                  const SizedBox(
                     height: 15,
                   ),
                   registerButton,

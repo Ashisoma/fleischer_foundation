@@ -12,100 +12,17 @@ class LoginScreen extends StatefulWidget {
 class _LoginScreenState extends State<LoginScreen> {
   final _formKey2 = GlobalKey<FormState>();
   final TextEditingController firstNameEditingController =
-      new TextEditingController();
+      TextEditingController();
   final TextEditingController seconfNameEditingController =
-      new TextEditingController();
-  final TextEditingController emailEditingController =
-      new TextEditingController();
+      TextEditingController();
+  final TextEditingController emailEditingController = TextEditingController();
   final TextEditingController passwordNameEditingController =
-      new TextEditingController();
+      TextEditingController();
   final TextEditingController confirmPasswordNameEditingController =
-      new TextEditingController();
+      TextEditingController();
 
   @override
   Widget build(BuildContext context) {
-    final loginBtn = Material(
-      elevation: 5,
-      color: Colors.white,
-      shape: const StadiumBorder(
-        side: BorderSide(color: Colors.white, width: 2),
-      ),
-      // borderRadius: BorderRadius.circular(30),
-      child: MaterialButton(
-        onPressed: () {
-          Navigator.push(
-              context, MaterialPageRoute(builder: (context) => LoginScreen()));
-        },
-        padding:const EdgeInsets.fromLTRB(20, 15, 20, 15),
-        minWidth: MediaQuery.of(context).size.width,
-        child: const Text("Login",
-            textAlign: TextAlign.center,
-            style: TextStyle(
-              fontSize: 20,
-              color: Colors.black,
-            )),
-      ),
-    );
-
-    final loginButton = Material(
-      elevation: 5,
-      color: Colors.white,
-      // shape: const StadiumBorder(
-      // side: BorderSide(color: Colors.black, width: 2),
-      // ),
-      borderRadius: BorderRadius.circular(30),
-      child: MaterialButton(
-        onPressed: () {
-          Navigator.push(
-              context, MaterialPageRoute(builder: (context) => SplashScreen()));
-        },
-        padding:const  EdgeInsets.fromLTRB(20, 15, 20, 15),
-        minWidth: MediaQuery.of(context).size.width,
-        child: const Text("Log in",
-            textAlign: TextAlign.center,
-            style: TextStyle(
-              fontSize: 20,
-              color: Colors.black,
-            )),
-      ),
-    );
-
-    final emailField = TextFormField(
-      autofocus: false,
-      controller: emailEditingController,
-      keyboardType: TextInputType.emailAddress,
-      onSaved: (value) {
-        emailEditingController.text = value!;
-      },
-      textInputAction: TextInputAction.next,
-      decoration: InputDecoration(
-        prefixIcon: const Icon(Icons.mail),
-        contentPadding: const EdgeInsets.fromLTRB(20, 15, 20, 15),
-        hintText: "Email",
-        border: OutlineInputBorder(
-          borderRadius: BorderRadius.circular(10),
-        ),
-      ),
-    );
-    final passwordNameField = TextFormField(
-      autofocus: false,
-      obscureText: true,
-      controller: passwordNameEditingController,
-      // keyboardType: TextInputType.,
-      onSaved: (value) {
-        passwordNameEditingController.text = value!;
-      },
-      textInputAction: TextInputAction.next,
-      decoration: InputDecoration(
-        prefixIcon: const Icon(Icons.key),
-        contentPadding: const EdgeInsets.fromLTRB(20, 15, 20, 15),
-        hintText: "Password",
-        border: OutlineInputBorder(
-          borderRadius: BorderRadius.circular(10),
-        ),
-      ),
-    );
-
     return Scaffold(
       appBar: AppBar(
         backgroundColor: Colors.transparent,
@@ -151,13 +68,13 @@ class _LoginScreenState extends State<LoginScreen> {
                     ),
                   ),
                   const SizedBox(height: 10),
-                  emailField,
+                  emailField(),
                   const SizedBox(height: 10),
-                  passwordNameField,
+                  passwordNameField(),
                   const SizedBox(
                     height: 15,
                   ),
-                  loginButton,
+                  logginButton(),
                   const SizedBox(height: 10),
                   Row(
                     mainAxisAlignment: MainAxisAlignment.center,
@@ -168,7 +85,8 @@ class _LoginScreenState extends State<LoginScreen> {
                           Navigator.push(
                               context,
                               MaterialPageRoute(
-                                  builder: (context) => const RegisterScreen()));
+                                  builder: (context) =>
+                                      const RegisterScreen()));
                         },
                         child: const Text(
                           "Sign up here",
@@ -185,6 +103,97 @@ class _LoginScreenState extends State<LoginScreen> {
               ),
             ),
           ),
+        ),
+      ),
+    );
+  }
+
+  Widget loginBtn(BuildContext context) {
+    return Material(
+      elevation: 5,
+      color: Colors.white,
+      shape: const StadiumBorder(
+        side: BorderSide(color: Colors.white, width: 2),
+      ),
+      // borderRadius: BorderRadius.circular(30),
+      child: MaterialButton(
+        onPressed: () {
+          Navigator.push(context,
+              MaterialPageRoute(builder: (context) => const LoginScreen()));
+        },
+        padding: const EdgeInsets.fromLTRB(20, 15, 20, 15),
+        minWidth: MediaQuery.of(context).size.width,
+        child: const Text("Login",
+            textAlign: TextAlign.center,
+            style: TextStyle(
+              fontSize: 20,
+              color: Colors.black,
+            )),
+      ),
+    );
+  }
+
+  Widget logginButton() {
+    return Material(
+      elevation: 5,
+      color: Colors.white,
+      // shape: const StadiumBorder(
+      // side: BorderSide(color: Colors.black, width: 2),
+      // ),
+      borderRadius: BorderRadius.circular(30),
+      child: MaterialButton(
+        onPressed: () {
+          Navigator.push(context,
+              MaterialPageRoute(builder: (context) => const SplashScreen()));
+        },
+        padding: const EdgeInsets.fromLTRB(20, 15, 20, 15),
+        minWidth: MediaQuery.of(context).size.width,
+        child: const Text("Log in",
+            textAlign: TextAlign.center,
+            style: TextStyle(
+              fontSize: 20,
+              color: Colors.black,
+            )),
+      ),
+    );
+  }
+
+  Widget emailField() {
+    return TextFormField(
+      autofocus: false,
+      controller: emailEditingController,
+      keyboardType: TextInputType.emailAddress,
+      onSaved: (value) {
+        emailEditingController.text = value!;
+      },
+      textInputAction: TextInputAction.next,
+      decoration: InputDecoration(
+        prefixIcon: const Icon(Icons.mail),
+        contentPadding: const EdgeInsets.fromLTRB(20, 15, 20, 15),
+        hintText: "Email",
+        border: OutlineInputBorder(
+          borderRadius: BorderRadius.circular(10),
+        ),
+      ),
+    );
+  }
+
+  Widget passwordNameField() {
+    return TextFormField(
+      autofocus: false,
+      obscureText: true,
+      controller: passwordNameEditingController,
+      // keyboardType: TextInputType.,
+      onSaved: (value) {
+        passwordNameEditingController.text = value!;
+      },
+      textInputAction: TextInputAction.next,
+      decoration: InputDecoration(
+        prefixIcon: const Icon(Icons.key),
+        contentPadding: const EdgeInsets.fromLTRB(20, 15, 20, 15),
+        hintText: "Password",
+        border: OutlineInputBorder(
+          borderRadius: BorderRadius.circular(10),
         ),
       ),
     );
