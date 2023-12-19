@@ -1,3 +1,4 @@
+import 'package:fleischer_foundation/screens/home_screen.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
@@ -28,9 +29,19 @@ class _CommunityScreenState extends State<CommunityScreen>
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
+        automaticallyImplyLeading: false,
         backgroundColor: Colors.transparent,
         elevation: 0,
-        title: const Text(''),
+        title: const Text(
+          'Rendering Name',
+          style: TextStyle(
+            color: Colors.black,
+            fontStyle: FontStyle.normal,
+            decoration: TextDecoration.underline,
+            fontSize: 20,
+            fontWeight: FontWeight.w400,
+          ),
+        ),
         actions: [
           Container(
             decoration: BoxDecoration(
@@ -61,8 +72,8 @@ class _CommunityScreenState extends State<CommunityScreen>
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            const Padding(
-              padding: EdgeInsets.symmetric(
+            Padding(
+              padding: const EdgeInsets.symmetric(
                 horizontal: 15.0,
                 vertical: 15.0,
               ),
@@ -70,13 +81,12 @@ class _CommunityScreenState extends State<CommunityScreen>
                 'Community',
                 style: TextStyle(
                   fontSize: 18,
-                  fontWeight: FontWeight.w400,
+                  fontWeight: FontWeight.w500,
+                  color: Colors.grey.shade700,
                 ),
               ),
             ),
-            SizedBox(
-              height: MediaQuery.of(context).size.height * 0.01,
-            ),
+
             // tab views
             TabBar(
               controller: _tabController,
@@ -162,6 +172,66 @@ class _CommunityScreenState extends State<CommunityScreen>
                     },
                   ),
                 ],
+              ),
+            ),
+          ],
+        ),
+      ),
+      bottomNavigationBar: Container(
+        decoration: BoxDecoration(
+          color: Colors.white,
+          boxShadow: [
+            BoxShadow(
+              color: Colors.black.withOpacity(0.1),
+              spreadRadius: 1,
+              blurRadius: 1,
+              offset: const Offset(0, 1), // changes position of shadow
+            ),
+          ],
+        ),
+        child: Row(
+          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+          children: [
+            IconButton(
+              onPressed: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                    builder: (context) {
+                      return const HomeScreen();
+                    },
+                  ),
+                );
+              },
+              icon: const Icon(
+                CupertinoIcons.home,
+              ),
+            ),
+            IconButton(
+              onPressed: () {},
+              icon: const Icon(
+                CupertinoIcons.person,
+              ),
+            ),
+            IconButton(
+              onPressed: () {
+                Navigator.push(
+                  context,
+                  CupertinoPageRoute(
+                    builder: (context) {
+                      return const CommunityScreen();
+                    },
+                  ),
+                );
+              },
+              icon: const Icon(
+                CupertinoIcons.person_3,
+              ),
+            ),
+            IconButton(
+              onPressed: () {},
+              icon: const Icon(
+                CupertinoIcons.bell,
               ),
             ),
           ],
