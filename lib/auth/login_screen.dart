@@ -1,4 +1,5 @@
 import 'package:fleischer_foundation/auth/register_screen.dart';
+import 'package:fleischer_foundation/screens/home_screen.dart';
 import 'package:fleischer_foundation/screens/splash_screen.dart';
 import 'package:flutter/material.dart';
 
@@ -144,7 +145,7 @@ class _LoginScreenState extends State<LoginScreen> {
       child: MaterialButton(
         onPressed: () {
           Navigator.push(context,
-              MaterialPageRoute(builder: (context) => const SplashScreen()));
+              MaterialPageRoute(builder: (context) => const HomeScreen()));
         },
         padding: const EdgeInsets.fromLTRB(20, 15, 20, 15),
         minWidth: MediaQuery.of(context).size.width,
