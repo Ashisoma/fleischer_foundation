@@ -1,4 +1,5 @@
 import 'package:fleischer_foundation/screens/people_list.dart';
+import 'package:fleischer_foundation/screens/user_profile.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
@@ -117,7 +118,16 @@ class _HomeScreenState extends State<HomeScreen> {
               ),
             ),
             IconButton(
-              onPressed: () {},
+              onPressed: () {
+                 Navigator.push(
+                  context,
+                  CupertinoPageRoute(
+                    builder: (context) {
+                      return const UserProfileScreen();
+                    },
+                  ),
+                );
+              },
               icon: const Icon(
                 CupertinoIcons.person,
               ),

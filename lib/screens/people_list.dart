@@ -1,4 +1,5 @@
 import 'package:fleischer_foundation/screens/home_screen.dart';
+import 'package:fleischer_foundation/screens/user_profile.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
@@ -122,7 +123,7 @@ class _CommunityScreenState extends State<CommunityScreen>
                   ListView.separated(
                     physics: const BouncingScrollPhysics(),
                     separatorBuilder: (context, index) {
-                      return SizedBox(
+                      return const SizedBox(
                         height: 10,
                       );
                     },
@@ -149,7 +150,7 @@ class _CommunityScreenState extends State<CommunityScreen>
                   ListView.separated(
                     physics: const BouncingScrollPhysics(),
                     separatorBuilder: (context, index) {
-                      return SizedBox(
+                      return const SizedBox(
                         height: 10,
                       );
                     },
@@ -208,21 +209,23 @@ class _CommunityScreenState extends State<CommunityScreen>
               ),
             ),
             IconButton(
-              onPressed: () {},
+              onPressed: () {
+                 Navigator.push(
+                  context,
+                  CupertinoPageRoute(
+                    builder: (context) {
+                      return const UserProfileScreen();
+                    },
+                  ),
+                );
+              },
               icon: const Icon(
                 CupertinoIcons.person,
               ),
             ),
             IconButton(
               onPressed: () {
-                Navigator.push(
-                  context,
-                  CupertinoPageRoute(
-                    builder: (context) {
-                      return const CommunityScreen();
-                    },
-                  ),
-                );
+               
               },
               icon: const Icon(
                 CupertinoIcons.person_3,
