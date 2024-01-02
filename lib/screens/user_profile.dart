@@ -14,8 +14,47 @@ class _UserProfileScreenState extends State<UserProfileScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      
- floatingActionButton: FloatingActionButton(
+      appBar: AppBar(
+        automaticallyImplyLeading: false,
+        backgroundColor: Colors.transparent,
+        elevation: 0,
+        title: const Text(
+          'Rendering Name',
+          style: TextStyle(
+            color: Colors.black,
+            fontStyle: FontStyle.normal,
+            decoration: TextDecoration.underline,
+            fontSize: 20,
+            fontWeight: FontWeight.w400,
+          ),
+        ),
+        actions: [
+          Container(
+            decoration: BoxDecoration(
+              shape: BoxShape.circle,
+              color: Colors.grey.shade300,
+            ),
+            child: IconButton(
+              icon: const Icon(
+                CupertinoIcons.bell,
+                color: Colors.black,
+              ),
+              onPressed: () {},
+            ),
+          ),
+          GestureDetector(
+            child: SizedBox(
+              height: 10.0,
+              child: Image.asset(
+                'assets/icon.png',
+                scale: 20.0,
+              ),
+            ),
+            onTap: () {},
+          ),
+        ],
+      ),
+      floatingActionButton: FloatingActionButton(
           onPressed: () {},
           child: const Icon(
             Icons.settings,
