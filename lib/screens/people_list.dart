@@ -78,7 +78,7 @@ class _CommunityScreenState extends State<CommunityScreen>
                 vertical: 15.0,
               ),
               child: Text(
-                'Community',
+                'Connect',
                 style: TextStyle(
                   fontSize: 18,
                   fontWeight: FontWeight.w500,

@@ -154,131 +154,134 @@ class _HomeScreenState extends State<HomeScreen> {
   }
 
   Widget horizontalListView() {
-    return SizedBox(
-      height: 200,
-      width: MediaQuery.of(context).size.width * 1,
-      child: ListView.separated(
-        separatorBuilder: (context, index) {
-          return const SizedBox(
-            width: 10,
-          );
-        },
-        itemCount: 10,
-        scrollDirection: Axis.horizontal,
-        itemBuilder: (_, __) => Container(
-          decoration: BoxDecoration(
-            borderRadius: BorderRadius.circular(10),
-            border: Border.all(color: Colors.grey),
-            color: Colors.white,
-            boxShadow: const [
-              BoxShadow(
-                color: Colors.grey,
-                spreadRadius: 0.5,
-                blurRadius: 0.5,
-                offset: Offset(0, 0), // changes position of shadow
-              ),
-            ],
-          ),
-          // color: Colors.orange,
-          height: 200,
-          width: 180,
-          child: Column(
-            // mainAxisAlignment: MainAxisAlignment.start,
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: [
-              Stack(
-                children: [
-                  const Image(
-                    image: NetworkImage('https://picsum.photos/250?image=9'),
-                    height: 100,
-                    width: 250,
-                    fit: BoxFit.cover,
-                  ),
-                  Positioned(
-                    bottom: 1,
-                    left: 5,
-                    child: GestureDetector(
-                      onTap: () {},
-                      child: Container(
-                        padding: const EdgeInsets.all(4.0),
-                        decoration: BoxDecoration(
-                          borderRadius: BorderRadius.circular(5.0),
-                          color: Colors.grey.shade200,
-                        ),
-                        child: const Icon(
-                          Icons.door_back_door_outlined,
-                          size: 20,
-                          color: Colors.grey,
-                        ),
-                      ),
-                    ),
-                  ),
-                ],
-              ),
-
-              // SizedBox(height: MediaQuery.of(context).size.height * 0.01),
-              Container(
-                padding: const EdgeInsets.all(8.0),
-                decoration: BoxDecoration(
-                  borderRadius: BorderRadius.circular(5.0),
+    return Padding(
+      padding: const EdgeInsets.only(left: 8.0),
+      child: SizedBox(
+        height: 200,
+        width: MediaQuery.of(context).size.width * 1,
+        child: ListView.separated(
+          separatorBuilder: (context, index) {
+            return const SizedBox(
+              width: 10,
+            );
+          },
+          itemCount: 10,
+          scrollDirection: Axis.horizontal,
+          itemBuilder: (_, __) => Container(
+            decoration: BoxDecoration(
+              borderRadius: BorderRadius.circular(10),
+              border: Border.all(color: Colors.grey),
+              color: Colors.white,
+              boxShadow: const [
+                BoxShadow(
+                  color: Colors.grey,
+                  spreadRadius: 0.5,
+                  blurRadius: 0.5,
+                  offset: Offset(0, 0), // changes position of shadow
                 ),
-
-                // width: 200,
-                child: const Column(
-                  crossAxisAlignment: CrossAxisAlignment.start,
+              ],
+            ),
+            // color: Colors.orange,
+            height: 200,
+            width: 180,
+            child: Column(
+              // mainAxisAlignment: MainAxisAlignment.start,
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                Stack(
                   children: [
-                    Text(
-                      "Mentorship Program",
-                      style: TextStyle(
-                        fontFamily: 'Exo',
-                        color: Colors.black,
-                        fontWeight: FontWeight.w600,
-                        fontSize: 15,
+                    const Image(
+                      image: NetworkImage('https://picsum.photos/250?image=9'),
+                      height: 100,
+                      width: 250,
+                      fit: BoxFit.cover,
+                    ),
+                    Positioned(
+                      bottom: 1,
+                      left: 5,
+                      child: GestureDetector(
+                        onTap: () {},
+                        child: Container(
+                          padding: const EdgeInsets.all(4.0),
+                          decoration: BoxDecoration(
+                            borderRadius: BorderRadius.circular(5.0),
+                            color: Colors.grey.shade200,
+                          ),
+                          child: const Icon(
+                            Icons.door_back_door_outlined,
+                            size: 20,
+                            color: Colors.grey,
+                          ),
+                        ),
                       ),
                     ),
-
-                    SizedBox(
-                      height: 5,
-                    ),
-                    Row(
-                      children: [
-                        Icon(
-                          Icons.calendar_month_rounded,
-                          size: 15,
-                        ),
-                        // label:
-                        // Icon(icon)
-                        Text(
-                          ' Feb 1, 2023',
-                          style: TextStyle(
-                            fontWeight: FontWeight.w700,
-                            fontSize: 14,
-                          ),
-                        ),
-                      ],
-                    ),
-                    SizedBox(
-                      height: 10,
-                    ),
-                    Row(
-                      children: [
-                        Icon(Icons.place_outlined, size: 15),
-                        Text(
-                          "Ujamaa Family",
-                          style: TextStyle(
-                            // color: Colors.black,
-                            fontWeight: FontWeight.w300,
-                            fontSize: 14,
-                          ),
-                        ),
-                      ],
-                    ),
-                    // TextButton.icon(
-                    // onPressed: () {},
                   ],
                 ),
-              ),
-            ],
+
+                // SizedBox(height: MediaQuery.of(context).size.height * 0.01),
+                Container(
+                  padding: const EdgeInsets.all(8.0),
+                  decoration: BoxDecoration(
+                    borderRadius: BorderRadius.circular(5.0),
+                  ),
+
+                  // width: 200,
+                  child: const Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      Text(
+                        "Mentorship Program",
+                        style: TextStyle(
+                          fontFamily: 'Exo',
+                          color: Colors.black,
+                          fontWeight: FontWeight.w600,
+                          fontSize: 15,
+                        ),
+                      ),
+
+                      SizedBox(
+                        height: 5,
+                      ),
+                      Row(
+                        children: [
+                          Icon(
+                            Icons.calendar_month_rounded,
+                            size: 15,
+                          ),
+                          // label:
+                          // Icon(icon)
+                          Text(
+                            ' Feb 1, 2023',
+                            style: TextStyle(
+                              fontWeight: FontWeight.w700,
+                              fontSize: 14,
+                            ),
+                          ),
+                        ],
+                      ),
+                      SizedBox(
+                        height: 10,
+                      ),
+                      Row(
+                        children: [
+                          Icon(Icons.place_outlined, size: 15),
+                          Text(
+                            "Ujamaa Family",
+                            style: TextStyle(
+                              // color: Colors.black,
+                              fontWeight: FontWeight.w300,
+                              fontSize: 14,
+                            ),
+                          ),
+                        ],
+                      ),
+                      // TextButton.icon(
+                      // onPressed: () {},
+                    ],
+                  ),
+                ),
+              ],
+            ),
           ),
         ),
       ),
