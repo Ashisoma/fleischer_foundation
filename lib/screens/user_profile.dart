@@ -54,11 +54,7 @@ class _UserProfileScreenState extends State<UserProfileScreen> {
           ),
         ],
       ),
-      floatingActionButton: FloatingActionButton(
-          onPressed: () {},
-          child: const Icon(
-            Icons.settings,
-          )),
+  
       bottomNavigationBar: Container(
         child: Row(
           mainAxisAlignment: MainAxisAlignment.spaceEvenly,
