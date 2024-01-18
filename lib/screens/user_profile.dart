@@ -50,7 +50,9 @@ class _UserProfileScreenState extends State<UserProfileScreen> {
                 scale: 20.0,
               ),
             ),
-            onTap: () {},
+            onTap: () {
+              // GET TO
+            },
           ),
         ],
       ),
