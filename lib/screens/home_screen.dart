@@ -119,7 +119,7 @@ class _HomeScreenState extends State<HomeScreen> {
             ),
             IconButton(
               onPressed: () {
-                 Navigator.push(
+                Navigator.push(
                   context,
                   CupertinoPageRoute(
                     builder: (context) {
@@ -150,7 +150,7 @@ class _HomeScreenState extends State<HomeScreen> {
             IconButton(
               onPressed: () {},
               icon: const Icon(
-                CupertinoIcons.bell,
+                CupertinoIcons.graph_square,
               ),
             ),
           ],

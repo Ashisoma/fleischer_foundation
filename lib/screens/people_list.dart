@@ -210,7 +210,7 @@ class _CommunityScreenState extends State<CommunityScreen>
             ),
             IconButton(
               onPressed: () {
-                 Navigator.push(
+                Navigator.push(
                   context,
                   CupertinoPageRoute(
                     builder: (context) {
@@ -224,9 +224,7 @@ class _CommunityScreenState extends State<CommunityScreen>
               ),
             ),
             IconButton(
-              onPressed: () {
-               
-              },
+              onPressed: () {},
               icon: const Icon(
                 CupertinoIcons.person_3,
               ),
@@ -234,7 +232,7 @@ class _CommunityScreenState extends State<CommunityScreen>
             IconButton(
               onPressed: () {},
               icon: const Icon(
-                CupertinoIcons.bell,
+                CupertinoIcons.graph_square,
               ),
             ),
           ],
